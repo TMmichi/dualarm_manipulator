@@ -67,7 +67,7 @@ roslaunch kinova_bringup kinova_robot.launch
 ```
 roslaunch jaco_controller_kinova jaco_controller_kinova.launch
 ```
-As it is mentioned before, there is no significant differneces with the simulation ros control script.
+As it is mentioned before, there is no significant differnece with the simulation ros control script.
 
 
 
