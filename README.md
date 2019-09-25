@@ -26,7 +26,7 @@ sudo apt-get install ros-<distro>-moveit-visual-tools
 ```
 sudo apt-get install libqt5x11extras5=5.5.1-3build1
 ```
-in order to install ros-<distro>-rviz-visual-tools
+  in order to install ros-<distro>-rviz-visual-tools
   
 ## 1-3. Build repo
 
