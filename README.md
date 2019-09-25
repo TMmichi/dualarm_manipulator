@@ -6,7 +6,7 @@ Currently tested in Ubuntu 18.04 and ROS melodic
 
 # 1. Installation
 
-Installation in ROS melodic with ubuntu 18.04 is preffered (since other version of ROS or ubuntu distro are not tested)
+Installation in Ubuntu 18.04 with ROS melodic is preffered (since other version of ROS or ubuntu distro were not tested)
 
 ## 1-1.Preliminary
 
