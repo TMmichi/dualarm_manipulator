@@ -99,12 +99,10 @@ As it is mentioned before, there is no significant differnece with the simulatio
 
 #### Reference
 
-[moveit_source_code](https://github.com/ros-planning/moveit.git)
+[kinova-ros_source_code](https://github.com/Kinovarobotics/kinova-ros.git) from kinova robotics
 
-[kinova-ros_source_code](https://github.com/Kinovarobotics/kinova-ros.git)
+[V-rep_api](https://github.com/JoshSong/jaco_ros_vrep.git) from github@JoshSong
 
-[V-rep_api](https://github.com/JoshSong/jaco_ros_vrep.git)
-
-[controller_script](http://docs.ros.org/kinetic/api/moveit_tutorials/html/index.html)
+[controller_script](http://docs.ros.org/kinetic/api/moveit_tutorials/html/index.html) from moveit_tutorial
 
 
