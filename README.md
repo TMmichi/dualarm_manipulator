@@ -11,7 +11,7 @@ Since most of the ROS dependecies are included as a source in the repository, ca
 ## 1-1.Preliminary
 
 ### V-rep
-v-rep source can be downloaded from [here](http://www.coppeliarobotics.com/ubuntuVersions.html) and should be installed within the '/opt' folder. Installed directory can be changed, but should be matched with the vrep_path argument within the launch file: 'vrep_jaco_bringup/launch/bringup.launch: vrep_path'
+v-rep source can be downloaded from [here](http://www.coppeliarobotics.com/ubuntuVersions.html) and should be installed within the `/opt` folder. Installed directory can be changed, but should be matched with the vrep_path argument within the launch file: `vrep_jaco_bringup/launch/bringup.launch: vrep_path`
 ```
 ```
 
