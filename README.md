@@ -35,6 +35,14 @@ Build your repo with `catkin_make` command in the directory where your `src` fol
 catkin_make
 ```
 
+## 1-4. Source your repo
+
+Source your `setup.bash` file in your project devel folder.
+```
+echo "source ~YOUR_PROJECT_FOLDER/devl/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+```
+
 # 2. Usage
 
 Manipulation of a real machine and one in the simulation are much alike from each other. 
