@@ -28,16 +28,14 @@ sudo apt-get install libqt5x11extras5=5.5.1-3build1
 ```
   in order to install ros-<distro>-rviz-visual-tools
   
-### 1-3. Build repo
+### 1-3. Build & Source repo
 
 Build your repo with `catkin_make` command in the directory where your `src` folder is located.
 ```
 catkin_make
 ```
 
-### 1-4. Source your repo
-
-Source your `setup.bash` file in your project devel folder.
+After building your repo, source `setup.bash` file in your project devel folder to the `.bashrc`.
 ```
 echo "source ~YOUR_PROJECT_FOLDER/devl/setup.bash" >> ~/.bashrc
 source ~/.bashrc
