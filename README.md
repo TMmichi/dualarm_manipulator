@@ -48,8 +48,6 @@ jaco_controller.launch includes most of the parameters required from the moveit!
 
 It also launches the ROS node with C++ script `jaco_controller.cpp` in folder `jaco_controller/src` which initializes the actionlib client side which communicates with the v-rep api server side.
 
-Jaco
-
 
 
 ## 2-2. Manipulator control of a Real Machine
