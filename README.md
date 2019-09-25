@@ -44,7 +44,7 @@ Bringup launch file DOES NOT include manipulator URDF xacro.
 roslaunch jaco_controller jaco_controller.launch
 ```
 
-jaco_controller.launch includes most of the parameters required from the moveit! package with control parameters and launches the visualization node with RVIZ.
+`jaco_controller.launch` includes most of the parameters required from the moveit! package with control parameters and launches the visualization node with RVIZ.
 
 It also launches the ROS node with C++ script `jaco_controller.cpp` in folder `jaco_controller/src` which initializes the actionlib client side which communicates with the v-rep api server side.
 
