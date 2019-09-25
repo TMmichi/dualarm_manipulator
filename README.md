@@ -55,7 +55,7 @@ It also launches the ROS node with C++ script `jaco_controller.cpp` in folder `j
 ### 2-2-1. Jaco  bringup
 
 ```
-roslaunch kinova_bringup robot.launch
+roslaunch kinova_bringup kinova_robot.launch
 ```
 
 ### 2-2-2. Manipulator control node with moveit! in ROS node (real machine)
