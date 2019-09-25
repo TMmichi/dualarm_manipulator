@@ -1,0 +1,10 @@
+<launch>
+    <param name="/use_sim_time" value="true"/>
+    <param name="octomap_frame" type="string" value="base_link"/>
+    <include file="$(find vrep_jaco_moveit)/launch/jaco_moveit.launch"/>
+
+    <include file="$(find vrep_jaco_moveit)/launch/moveit_rviz.launch">
+        <arg name="debug" value="false"/>
+        <arg name="config" value="true"/>
+  </include>
+</launch>

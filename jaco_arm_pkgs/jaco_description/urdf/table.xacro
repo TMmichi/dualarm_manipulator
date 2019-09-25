@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="table" xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body" xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller" xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz" xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom" xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#joint" xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model" xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics" xmlns:renderable="http://playerstage.sourceforge.net/gazebo/xmlschema/#renderable" xmlns:rendering="http://playerstage.sourceforge.net/gazebo/xmlschema/#rendering" xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor" xmlns:xacro="http://ros.org/wiki/xacro" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<xacro:include filename="$(find jaco_description)/urdf/table_properties.xacro" />
+	<gazebo reference="table_base">
+		<material>Gazebo/FlatBlack</material>
+	</gazebo>
+	<gazebo reference="table_top">
+		<material>Gazebo/White</material>
+	</gazebo>
+	
+	<link name="table_base">
+		<inertial>
+			<origin xyz="0.018511509179121 0.23251932391586 1.175991980646075" rpy="0 0 0" />
+			<mass value="12.6503207764878" />
+			<inertia ixx="1.69157982834144" ixy="-1.62908934773947E-14" ixz="-9.74479440236252E-15" iyy="3.23322704330012" iyz="-1.84123364573924E-14" izz="2.59218197995528" />
+		</inertial>
+		<visual>
+			<origin xyz="0.4 0.25 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://jaco_description/meshes/objects/table_base.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.192156862745098 0.203921568627451 0.203921568627451 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0.4 0.25 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://jaco_description/meshes/objects/table_base.STL" />
+			</geometry>
+		</collision>
+	</link>
+	
+	<link name="table_top">
+		<inertial>
+			<origin xyz="0.4 0.25 0.64756" rpy="0 0 0" />
+			<mass value="27.72" />
+			<inertia ixx="1.48091559" ixy="-4.70197740328915E-35" ixz="1.33744867033177E-16" iyy="4.025175" iyz="0" izz="2.54929059" />
+		</inertial>
+		<visual>
+			<origin xyz="0.4 0.25 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://jaco_description/meshes/objects/table_top.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="1 1 1 1" />
+			</material>
+		</visual>
+		<visual>
+			<origin xyz="0.4 ${t_thickness+rim_height/2+0.25} ${-t_height/2+rim_thickness/2}" rpy="0 0 0" />
+			<geometry>
+				<box size="${t_width} ${rim_height} ${rim_thickness}"/>
+			</geometry>
+			<material name="">
+				<color rgba="0.8 0.8 1 1" />
+			</material>
+		</visual>
+		<visual>
+			<origin xyz="${t_width/2-rim_thickness/2+0.4} ${t_thickness+rim_height/2+0.25} 0" rpy="0 0 0" />
+			<geometry>
+				<box size="${rim_thickness} ${rim_height} ${t_height}"/>
+			</geometry>
+			<material name="">
+				<color rgba="0.8 0.8 1 1" />
+			</material>
+		</visual>
+
+		<collision>
+			<origin xyz="0 ${t_thickness+rim_height/2+0.25} ${-t_height/2+rim_thickness/2}" rpy="0 0 0" />
+			<geometry>
+				<box size="${t_width} ${rim_height} ${rim_thickness}"/>
+			</geometry>
+		</collision>
+		<collision>
+			<origin xyz="${t_width/2-rim_thickness/2+0.4} ${t_thickness+rim_height/2+0.25} 0" rpy="0 0 0" />
+			<geometry>
+				<box size="${rim_thickness} ${rim_height} ${t_height}"/>
+			</geometry>
+		</collision>
+		<collision>
+			<origin xyz="0.4 0.25 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://jaco_description/meshes/objects/table_top.STL" />
+			</geometry>
+		</collision>
+	</link>
+
+</robot>

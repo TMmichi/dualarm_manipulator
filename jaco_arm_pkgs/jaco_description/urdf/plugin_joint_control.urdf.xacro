@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root 
+ xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+ xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+ xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+ xmlns:xacro="http://ros.org/wiki/xacro">
+
+
+<!-- macro to laod jaco control plugins -->
+<xacro:macro name="plugin_joint_control" params="robot_components_namespace trajectory_param_namespace">
+	<gazebo>
+        <plugin name="plugin_trajectory_action_server" filename="libtrajectory_action_server.so">
+            <robot_components_namespace>
+                ${robot_components_namespace} 
+            </robot_components_namespace>
+            <trajectory_param_namespace>
+                ${trajectory_param_namespace} 
+            </trajectory_param_namespace>
+        </plugin>
+	</gazebo>
+</xacro:macro>
+
+</root>

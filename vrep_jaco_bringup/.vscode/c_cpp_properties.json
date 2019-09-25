@@ -1,0 +1,21 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/opt/ros/melodic/include/**",
+        "/home/ljh/Documents/vrep_jaco/src/jaco_arm_pkgs/convenience-pkgs/arm_components_name_manager/include/**",
+        "/home/ljh/Documents/vrep_jaco/src/jaco_arm_pkgs/convenience-pkgs/baselib_binding/include/**",
+        "/home/ljh/Documents/vrep_jaco/src/jaco_arm_pkgs/convenience-pkgs/convenience_math_functions/include/**",
+        "/home/ljh/Documents/vrep_jaco/src/jaco_arm_pkgs/convenience-pkgs/convenience_ros_functions/include/**",
+        "/home/ljh/Documents/vrep_jaco/src/jaco_arm_pkgs/joint_trajectory_execution/include/**",
+        "/home/ljh/Documents/vrep_jaco/src/jaco_arm_pkgs/convenience-pkgs/logger_binding/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ]
+}

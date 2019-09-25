@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>vrep_jaco_bringup</name>
+  <version>1.0.0</version>
+  <description>Machine Learning and Control Systems Lab.</description>
+  <license>TODO</license>
+  <maintainer email="ljh_0921@yonsei.ac.kr">Jeonghoon Lee</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>tf</depend>
+  <exec_depend>jaco_description</exec_depend>
+</package>

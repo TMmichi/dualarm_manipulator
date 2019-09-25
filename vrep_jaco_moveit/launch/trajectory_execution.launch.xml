@@ -1,0 +1,7 @@
+<launch>
+  <param name="moveit_manage_controllers" value="true"/>
+  <param name="trajectory_execution/allowed_execution_duration_scaling" value="1.2"/> <!-- default 1.2 -->
+  <param name="trajectory_execution/allowed_goal_duration_margin" value="100"/> <!-- default 0.5 -->
+  <param name="trajectory_execution/allowed_start_tolerance" value="0.01"/> <!-- default 0.01 -->
+  <include file="$(find vrep_jaco_moveit)/launch/jaco_moveit_simple_controller_manager.launch"/>
+</launch>

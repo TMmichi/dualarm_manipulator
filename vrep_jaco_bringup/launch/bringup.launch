@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+ <!-- Launch v-rep -->
+  <param name="simulation" value="true"/>
+  <include file="$(find vrep_jaco_bringup)/launch/vrep.launch">
+    <arg name="vrep_path" value="/opt/vrep"/>
+    <arg name="scene_file" value="$(find vrep_jaco_bringup)/scene/jaco_table2.ttt"/>
+    <arg name="gui" value="true"/>
+    <arg name="paused" value="false"/>
+    <arg name="auto_quit" value="false"/>
+  </include>
+
+  <!-- Bring Jaco model -->
+  <include file="$(find vrep_jaco_bringup)/launch/model.launch"/>
+
+</launch>

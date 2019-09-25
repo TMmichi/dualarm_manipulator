@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+  <include file="$(find action_client)/launch/vrep_interface.launch"/>
+  
+  <arg name="vrep_path"/>
+  <arg name="scene_file"/>
+  <arg name="gui"/>
+  <arg name="paused"/>
+  <arg name="auto_quit"/>
+
+  <node pkg="vrep_jaco_bringup" type="vrep_jaco_bringup_simulator.py" name="vrep_jaco_bringup_simulator"  output="screen">
+    <param name="vrep_path" value="$(arg vrep_path)"/>
+    <param name="scene_file" value="$(arg scene_file)"/>
+    <param name="gui" value="$(arg gui)"/>
+    <param name="paused" value="$(arg paused)"/>
+    <param name="auto_quit" value="$(arg auto_quit)"/>
+  </node>
+</launch>

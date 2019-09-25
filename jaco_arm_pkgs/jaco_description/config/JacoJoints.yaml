@@ -1,0 +1,126 @@
+# please also refer to:
+# ``rosed arm_components_name_manager JointsTemplate.yaml``
+jaco:
+    # Name of the palm link.
+    palm_link: jaco_link_hand
+    
+    # Name of the end effector link.
+    effector_link: jaco_link_hand
+
+    # Names of the arm joints *without* the gripper joints.
+    arm_joints:
+        - jaco_joint_1
+        - jaco_joint_2
+        - jaco_joint_3
+        - jaco_joint_4
+        - jaco_joint_5
+        - jaco_joint_6
+
+    # initial ("Home") pose of the arm joints. Has to be the same
+    # order as arm_joints.
+    arm_joint_init:
+        - 4.5532045
+        - 4.5506868
+        - 0.7038534
+        - 5.4655337
+        - 1.506298
+        - 3.135861
+
+    # Maximum velocities for arm
+    arm_joint_max_vel:
+        - 0.984
+        - 0.984
+        - 0.984
+        - 1.57
+        - 1.57
+        - 1.57
+
+    # Maximum forces for arm
+    arm_joint_max_force:
+        - 8 
+        - 8
+        - 8
+        - 3
+        - 3
+        - 3
+
+
+    # All links which are in-between (and directly before and after)
+    # the arm_joints. It does however *not* include the palm_link
+    # because this is specified separately.
+    arm_links:
+        - jaco_link_1
+        - jaco_link_2
+        - jaco_link_3
+        - jaco_link_4
+        - jaco_link_5
+        - jaco_link_6
+            
+    # All joints of the "gripper". The gripper is the part of the
+    # arm used to grasp/grip objects. 
+    # Essentially, they are the "finger joints".
+    gripper_joints:
+        - jaco_joint_finger_1
+        - jaco_joint_finger_2
+        - jaco_joint_finger_3
+
+    # initial ("Home") pose of the gripper joints. Has to be the same
+    # order as gripper_joints.
+    gripper_joint_init:
+        - 0
+        - 0
+        - 0
+
+    # Maximum velocities for gripper
+    gripper_joint_max_vel:
+        - 0.2
+        - 0.2
+        - 0.2 
+
+    # Maximum forces for gripper
+    gripper_joint_max_force:
+        - 2
+        - 2 
+        - 2
+
+
+
+    # Position controller names. Does not need to be specified
+    # if ArmComponentsNameManager instance is not used to read PID values
+    # Has to be in same order as arm_joints.
+    arm_position_controller_names:
+        - jaco_joint_1_position_controller
+        - jaco_joint_2_position_controller
+        - jaco_joint_3_position_controller
+        - jaco_joint_4_position_controller
+        - jaco_joint_5_position_controller
+        - jaco_joint_6_position_controller
+    
+    # Has to be in same order as arm_joints.
+    # arm_effort_controller_names:
+    
+    # Has to be in same order as gripper_joints.
+    gripper_position_controller_names:
+        - jaco_joint_finger_1_position_controller
+        - jaco_joint_finger_2_position_controller
+        - jaco_joint_finger_3_position_controller
+
+    # Velocity controller names. Does not need to be specified
+    # if ArmComponentsNameManager instance is not used to read PID values
+    # Has to be in same order as arm_joints.
+    arm_velocity_controller_names:
+        - jaco_joint_1_velocity_controller
+        - jaco_joint_2_velocity_controller
+        - jaco_joint_3_velocity_controller
+        - jaco_joint_4_velocity_controller
+        - jaco_joint_5_velocity_controller
+        - jaco_joint_6_velocity_controller
+    
+    # Has to be in same order as gripper_joints.
+    gripper_velocity_controller_names:
+        - jaco_joint_finger_1_velocity_controller
+        - jaco_joint_finger_2_velocity_controller
+        - jaco_joint_finger_3_velocity_controller
+
+    # Has to be in same order as gripper_joints.
+    # gripper_effort_controller_names:

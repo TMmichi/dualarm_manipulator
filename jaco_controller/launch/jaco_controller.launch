@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<launch>
+  <param name="robot_type" value="jaco" />
+  <arg name="joint_state" value="jaco/joint_states"/>
+  <!--<arg name="joint_state" value="jaco_driver/out/joint_state"/>-->
+  <remap from="joint_states" to="$(arg joint_state)"/>
+
+  <!--<node name="joint_trajectory_action_server" pkg="kinova_driver" type="joint_trajectory_action_server" output="screen" respawn="false" args="jaco"/>-->
+  <!--<node name="gripper_command_action_server" pkg="kinova_driver" type="gripper_command_action_server" output="screen" respawn="false" args="jaco"/>  -->
+
+
+  <!--Planning context-->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find jaco_description)/urdf/jaco.urdf'"/>
+  <param name="robot_description_semantic" textfile="$(find vrep_jaco_moveit)/config/jaco.srdf" />
+  <!--<param name="joint_state_control_topic" value="jaco/joint_control"/>-->
+  <!--<param name="publish_joint_states_topic" value="jaco/joint_states"/>-->
+  
+  <group ns="robot_description_planning">
+    <rosparam command="load" file="$(find vrep_jaco_moveit)/config/joint_limits.yaml"/>
+  </group>
+  <group ns="robot_description_kinematics">
+    <rosparam command="load" file="$(find vrep_jaco_moveit)/config/kinematics.yaml"/>
+  </group>
+
+  <!--OMPL planing pipeline xml-->
+  <group ns="move_group">
+    <arg name="planning_adapters" value="default_planner_request_adapters/AddTimeParameterization
+                default_planner_request_adapters/FixWorkspaceBounds
+                default_planner_request_adapters/FixStartStateBounds
+                default_planner_request_adapters/FixStartStateCollision
+                default_planner_request_adapters/FixStartStatePathConstraints
+                default_planner_request_adapters/AddTimeParameterization"/>
+    <param name="planning_plugin" value="ompl_interface/OMPLPlanner"/>
+    <param name="request_adapters" value="$(arg planning_adapters)"/>
+    <param name="default_workspace_bounds" value="10"/>
+    <param name="start_state_max_bounds_error" value="0.1"/>
+    <param name="start_state_max_dt" value="0.5"/>
+    <param name="max_sampling_attempts" value="120"/>
+    <rosparam command="load" file="$(find vrep_jaco_moveit)/config/ompl_planning.yaml"/>
+  </group>
+
+  <!--Move group w/o planning scene monitor-->
+  <node name="move_group" pkg="moveit_ros_move_group" type="move_group" respawn="false" output="screen" args="--debug">
+    <!--Move group settings-->
+    <env name="DISPLAY" value="$(optenv DISPLAY :0)" />
+    <remap from="joint_states" to="$(arg joint_state)"/>
+    <param name="allow_trajectory_execution" value="true"/>
+    <param name="max_safe_path_cost" value="1"/>
+    <param name="jiggle_fraction" value="0.05" />
+    <!--Trajectory execution xml-->
+    <param name="moveit_manage_controller" value="true"/>
+    <param name="trajectory_execution/allowed_execution_duration_scaling" value="1.2"/>
+    <param name="trajectory_execution/allowed_goal_duration_margin" value="0.5"/>
+    <param name="trajectory_execution/allowed_start_tolerance" value="0.01"/>
+    <!--moveit simple comtroller manager-->
+    <param name="moveit_controller_manager" value="moveit_simple_controller_manager/MoveItSimpleControllerManager"/>
+    <rosparam file="$(find vrep_jaco_moveit)/config/moveit_simple_controllers.yaml"/>
+    <!--Planning context-->
+    <param name="planning_plugin" value="ompl_interface/OMPLPlanner"/>
+    <param name="octomap_resolution" type="double" value="0.025" />
+    <!--Planning scene update-->
+    <param name="planning_scene_monitor/publish_planning_scene" value="true" />
+    <param name="planning_scene_monitor/publish_geometry_updates" value="true" />
+    <param name="planning_scene_monitor/publish_state_updates" value="true" />
+    <param name="planning_scene_monitor/publish_transforms_updates" value="true" />
+  </node>
+
+  <!--Jaco controller-->
+  <param name="/use_sim_time" value="true"/>
+  <node name="jaco_ros_controller" pkg="jaco_controller" type="jaco_controller" respawn="false" output="screen"/>
+
+  <!--RVIZ-->
+  <include file="$(find vrep_jaco_moveit)/launch/moveit_rviz.launch">
+        <arg name="debug" value="false"/>
+        <arg name="config" value="true"/>
+  </include>
+</launch>

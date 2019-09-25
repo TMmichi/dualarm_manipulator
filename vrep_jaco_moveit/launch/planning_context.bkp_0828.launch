@@ -1,0 +1,10 @@
+<launch>
+  <group ns="robot_description_planning">
+    <rosparam command="load" file="$(find vrep_jaco_moveit)/config/joint_limits.yaml"/>
+  </group>
+
+  <group ns="robot_description_kinematics">
+    <rosparam command="load" file="$(find vrep_jaco_moveit)/config/kinematics.yaml"/>
+  </group>
+  
+</launch>

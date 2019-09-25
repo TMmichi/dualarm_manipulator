@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="jaco_on_table"
+ xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+ xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+ xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+ xmlns:xacro="http://ros.org/wiki/xacro">
+
+<xacro:include filename="$(find jaco_description)/urdf/table_properties.xacro" />
+<xacro:include filename="$(find jaco_description)/urdf/jaco.urdf.xacro"/>
+
+<!-- MACRO FOR THE ROBOT ARM ON THE TABLE-->
+<xacro:macro name="jaco_on_table" params="parent">
+
+  <joint name="base_to_jaco_on_table" type="fixed">
+    <parent link="${parent}" />
+    <child link="table_base" />
+  </joint>
+
+  <link name="jaco_link_base">
+    <static>false</static>
+  </link>
+
+  <xacro:include filename="$(find jaco_description)/urdf/table.xacro" />
+  <joint name="table_to_arm" type="fixed">
+    <origin xyz="0 0 0.69" rpy="0 0 0" />
+    <parent link="table_base"/>
+    <child link="jaco_link_base"/>
+  </joint>
+
+</xacro:macro>
+</robot>
+

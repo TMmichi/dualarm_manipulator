@@ -1,0 +1,8 @@
+<launch>
+    <remap to="/jaco/joint_states" from="/joint_states"/>
+    ###############################################
+    # launch the planner
+    ###############################################
+    <include file="$(find vrep_jaco_moveit)/launch/planning_context.launch"/>
+    <include file="$(find vrep_jaco_moveit)/launch/move_group.launch"/>
+</launch>

@@ -1,0 +1,33 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/ljh/Documents/vrep_jaco/devel/include/**",
+                "/opt/ros/melodic/include/**",
+                "/home/ljh/Documents/vrep_jaco/src/action_client/include/**",
+                "/home/ljh/Documents/vrep_jaco/src/moveit/moveit_planners/chomp/chomp_motion_planner/include/**",
+                "/home/ljh/Documents/vrep_jaco/src/moveit/moveit_planners/chomp/chomp_interface/include/**",
+                "/home/ljh/Documents/vrep_jaco/src/moveit/moveit_ros/benchmarks/include/**",
+                "/home/ljh/Documents/vrep_jaco/src/moveit/moveit_plugins/moveit_ros_control_interface/include/**",
+                "/home/ljh/Documents/vrep_jaco/src/moveit/moveit_ros/move_group/include/**",
+                "/home/ljh/Documents/vrep_jaco/src/moveit/moveit_ros/occupancy_map_monitor/include/**",
+                "/home/ljh/Documents/vrep_jaco/src/moveit/moveit_ros/robot_interaction/include/**",
+                "/home/ljh/Documents/vrep_jaco/src/moveit/moveit_setup_assistant/include/**",
+                "/home/ljh/Documents/vrep_jaco/src/moveit/moveit_planners/sbpl/core/sbpl_interface/include/**",
+                "/home/ljh/Documents/vrep_jaco/src/moveit/moveit_plugins/moveit_simple_controller_manager/include/**",
+                "/home/ljh/Documents/vrep_jaco/src/vrep_api/include/**",
+                "/usr/include/**"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

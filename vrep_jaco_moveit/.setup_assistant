@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: jaco_description
+    relative_path: urdf/jaco.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/jaco.srdf
+  CONFIG:
+    author_name: Jeonghoon Lee
+    author_email: ljh_0921@yonsei.ac.kr
+    generated_timestamp: 1566355514

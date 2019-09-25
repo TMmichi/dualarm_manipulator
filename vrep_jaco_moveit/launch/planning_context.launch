@@ -1,0 +1,15 @@
+<launch>
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find jaco_description)/urdf/jaco.urdf.xacro'"/>
+  <param name="robot_description_semantic" textfile="$(find vrep_jaco_moveit)/config/jaco.srdf" />
+  <param name="joint_state_control_topic" value="jaco/joint_control"/>
+  <param name="publish_joint_states_topic" value="jaco/joint_states"/>
+  
+  <group ns="robot_description_planning">
+    <rosparam command="load" file="$(find vrep_jaco_moveit)/config/joint_limits.yaml"/>
+  </group>
+
+  <group ns="robot_description_kinematics">
+    <rosparam command="load" file="$(find vrep_jaco_moveit)/config/kinematics.yaml"/>
+  </group>
+  
+</launch>
