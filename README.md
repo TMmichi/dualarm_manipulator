@@ -11,7 +11,7 @@ Installation in Ubuntu 18.04 with ROS melodic is preffered (since other version 
 ### 1-1. Preliminary
 
 #### V-rep
-V-rep source can be downloaded from [here](http://www.coppeliarobotics.com/ubuntuVersions.html) and should be installed within the `/opt` folder. Installed directory can be changed, but should be matched with the vrep_path argument within the launch file: `vrep_jaco_bringup/launch/bringup.launch: vrep_path`
+V-rep source can be downloaded from [here](http://www.coppeliarobotics.com/ubuntuVersions.html) and should be installed within the `/opt` folder. Installed location can be varied, but should be matched with the vrep_path argument within the launch file: `vrep_jaco_bringup/launch/bringup.launch: vrep_path`
 
 ### 1-2. Moveit installation
 
