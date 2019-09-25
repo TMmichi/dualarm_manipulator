@@ -6,17 +6,33 @@ Currently tested in Ubuntu 18.04 and ROS melodic
 
 # 1. Installation
 
-Since most of the ROS dependecies are included as a source in the repository, catkin_make will do the ROS package buliding process. Any errors occured during installation can be resolved through installing proper packages appeared in the error message. GOOD LUCK.
-
-```
-sudo apt-get install ros-<distro>-moveit-resources
-```
+Installation in ROS melodic with ubuntu 18.04 is preffered (since other version of ROS or ubuntu distro are not tested)
 
 ## 1-1.Preliminary
 
 ### V-rep
 V-rep source can be downloaded from [here](http://www.coppeliarobotics.com/ubuntuVersions.html) and should be installed within the `/opt` folder. Installed directory can be changed, but should be matched with the vrep_path argument within the launch file: `vrep_jaco_bringup/launch/bringup.launch: vrep_path`
+
+## 1-2. Moveit installation
+
 ```
+sudo apt-get install ros-<distro>-moveit-core
+sudo apt-get install ros-<distro>-moveit-ros
+sudo apt-get install ros-<distro>-rviz-visual-tools
+sudo apt-get install ros-<distro>-moveit-visual-tools
+```
+#### Note
+- If your libqt5x11extras5 version is greater than 5.5.1-3build1, you should downgrade your libqt with command
+```
+sudo apt-get install libqt5x11extras5=5.5.1-3build1
+```
+in order to install ros-<distro>-rviz-visual-tools
+  
+## 1-3. Build repo
+
+Build your repo with `catkin_make` command in the directory where your `src` folder located.
+```
+catkin_make
 ```
 
 # 2. Usage
