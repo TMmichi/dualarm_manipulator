@@ -1,19 +1,19 @@
-# dualarm_manipulator
+# Dualarm_manipulator
 
 Manipulator controlling ROS package with moveit! for V-rep simulation / Local kinova jaco2 machine
 
 Currently tested in Ubuntu 18.04 and ROS melodic
 
-# 1. Installation
+## 1. Installation
 
 Installation in Ubuntu 18.04 with ROS melodic is preffered (since other version of ROS or ubuntu distro were not tested)
 
-## 1-1.Preliminary
+### 1-1.Preliminary
 
-### V-rep
+#### V-rep
 V-rep source can be downloaded from [here](http://www.coppeliarobotics.com/ubuntuVersions.html) and should be installed within the `/opt` folder. Installed directory can be changed, but should be matched with the vrep_path argument within the launch file: `vrep_jaco_bringup/launch/bringup.launch: vrep_path`
 
-## 1-2. Moveit installation
+### 1-2. Moveit installation
 
 ```
 sudo apt-get install ros-<distro>-moveit-core
@@ -21,21 +21,21 @@ sudo apt-get install ros-<distro>-moveit-ros
 sudo apt-get install ros-<distro>-rviz-visual-tools
 sudo apt-get install ros-<distro>-moveit-visual-tools
 ```
-#### Note
+##### Note
 - If your libqt5x11extras5 version is greater than 5.5.1-3build1, you should downgrade your libqt with command
 ```
 sudo apt-get install libqt5x11extras5=5.5.1-3build1
 ```
   in order to install ros-<distro>-rviz-visual-tools
   
-## 1-3. Build repo
+### 1-3. Build repo
 
 Build your repo with `catkin_make` command in the directory where your `src` folder located.
 ```
 catkin_make
 ```
 
-## 1-4. Source your repo
+### 1-4. Source your repo
 
 Source your `setup.bash` file in your project devel folder.
 ```
@@ -43,13 +43,13 @@ echo "source ~YOUR_PROJECT_FOLDER/devl/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
 
-# 2. Usage
+## 2. Usage
 
 Manipulation of a real machine and one in the simulation are much alike from each other. 
 
-## 2-1. Manipulator control within the V-rep simulation
+### 2-1. Manipulator control within the V-rep simulation
 
-### 2-1-1. Simulation environment bringup with ROS C++ Api
+#### 2-1-1. Simulation environment bringup with ROS C++ Api
 
 ```
 roslaunch vrep_jaco_bringup bringup.launch
@@ -61,14 +61,14 @@ Api script will initialize actionlib server side that can be connected with the 
 Bringup launch file DOES NOT include manipulator URDF xacro.
 
 
-#### Note:
+##### Note:
 - Prior to connect ROS-api of V-rep with the simulation environment itself, V-rep should be launched with the designated port number. Default port number has been set to `19997` in `action_client/src/VrepInterface.cpp` line number `38` with clientID_.
 
 - If the api client node is running on a separate machine other than the machine with V-rep simulation, IP address should also be clarified, other than the default localhost (`127.0.0.1`)
 
 
 
-### 2-1-2. Manipulator control node with moveit! in ROS node
+#### 2-1-2. Manipulator control node with moveit! in ROS node
 
 ```
 roslaunch jaco_controller jaco_controller.launch
@@ -82,15 +82,15 @@ By using Moveit! package, user does not have to consider action/state synchroniz
 
 
 
-## 2-2. Manipulator control of a Real Machine
+### 2-2. Manipulator control of a Real Machine
 
-### 2-2-1. Jaco  bringup
+#### 2-2-1. Jaco  bringup
 
 ```
 roslaunch kinova_bringup kinova_robot.launch
 ```
 
-### 2-2-2. Manipulator control node with moveit! in ROS node (real machine)
+#### 2-2-2. Manipulator control node with moveit! in ROS node (real machine)
 
 ```
 roslaunch jaco_controller_kinova jaco_controller_kinova.launch
@@ -99,7 +99,7 @@ As it is mentioned before, there is no significant differnece with the simulatio
 
 
 
-### Reference
+#### Reference
 
 [moveit_source_code](https://github.com/ros-planning/moveit.git)
 
