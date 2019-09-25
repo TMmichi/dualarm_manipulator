@@ -8,6 +8,10 @@ Currently tested in Ubuntu 18.04 and ROS melodic
 
 Since most of the ROS dependecies are included as a source in the repository, catkin_make will do the ROS package buliding process. Any errors occured during installation can be resolved through installing proper packages appeared in the error message. GOOD LUCK.
 
+```
+sudo apt-get install ros-<distro>-moveit-resources
+```
+
 ## 1-1.Preliminary
 
 ### V-rep
