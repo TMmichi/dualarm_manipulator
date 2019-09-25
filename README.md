@@ -6,12 +6,12 @@ Currently tested in Ubuntu 18.04 and ROS melodic
 
 # 1. Installation
 
-Since most of the ROS dependecies are included as a source in the repository, catkin_make will do the ROS package buliding process.
+Since most of the ROS dependecies are included as a source in the repository, catkin_make will do the ROS package buliding process. Any errors occured during installation can be resolved through installing proper packages appeared in the error message. GOOD LUCK.
 
 ## 1-1.Preliminary
 
 ### V-rep
-v-rep source can be downloaded from [here](http://www.coppeliarobotics.com/ubuntuVersions.html) and should be installed within the '/opt' folder. Installed directory can be changed, but should be matched with the vrep_path argument within the launch file: 'vrep_jaco_bringup/launch/bringup.launch: vrep_path'
+v-rep source can be downloaded from [here](http://www.coppeliarobotics.com/ubuntuVersions.html) and should be installed within the `/opt` folder. Installed directory can be changed, but should be matched with the vrep_path argument within the launch file: `vrep_jaco_bringup/launch/bringup.launch: vrep_path`
 ```
 ```
 
@@ -59,7 +59,7 @@ By using Moveit! package, user does not have to consider action/state synchroniz
 ### 2-2-1. Jaco  bringup
 
 ```
-roslaunch kinova_bringup robot.launch
+roslaunch kinova_bringup kinova_robot.launch
 ```
 
 ### 2-2-2. Manipulator control node with moveit! in ROS node (real machine)
