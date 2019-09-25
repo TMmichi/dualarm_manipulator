@@ -17,6 +17,8 @@ v-rep source can be downloaded from [here](http://www.coppeliarobotics.com/ubunt
 
 # 2. Usage
 
+Manipulation of a real machine and one in the simulation are much alike from each other. 
+
 ## 2-1. Manipulator control within the v-rep simulation
 
 ### 2-1-1. Simulation environment bringup with ROS C++ Api
@@ -25,7 +27,7 @@ v-rep source can be downloaded from [here](http://www.coppeliarobotics.com/ubunt
 roslaunch vrep_jaco_bringup bringup.launch
 ```
 
-bringup.launch file will launch a V-rep env with the scene file `jaco_table2.ttt`, and initialize the vrep_interface node (C++ api of V-rep).
+`bringup.launch` file will launch a V-rep env with the scene file `jaco_table2.ttt`, and initialize the vrep_interface node (C++ api of V-rep).
 Api script will initialize actionlib server side that can be connected with the moveit! planning instance.
 
 Bringup launch file DOES NOT include manipulator URDF xacro.
@@ -44,11 +46,11 @@ Bringup launch file DOES NOT include manipulator URDF xacro.
 roslaunch jaco_controller jaco_controller.launch
 ```
 
-jaco_controller.launch includes most of the parameters required from the moveit! package with control parameters and launches the visualization node with RVIZ.
+`jaco_controller.launch` includes most of the parameters required from the moveit! package with control parameters and launches the visualization node with RVIZ.
 
 It also launches the ROS node with C++ script `jaco_controller.cpp` in folder `jaco_controller/src` which initializes the actionlib client side which communicates with the v-rep api server side.
 
-Jaco
+By using Moveit! package, user does not have to consider action/state synchronization between the machine in the simulation and the controller node. Providing target gripper pose to the plan() method and calling move() within the move_group instance will publish rostopic type of `/name_of_the_remapped_machine/joint_trajectory/goal` from actionlib client side to the server side and wait till all of the goal joinst states in `joint_trajectory/goal` to be finished in simulation.
 
 
 
@@ -65,7 +67,7 @@ roslaunch kinova_bringup robot.launch
 ```
 roslaunch jaco_controller_kinova jaco_controller_kinova.launch
 ```
-There is no significant differneces with the simulation ros control script.
+As it is mentioned before, there is no significant differneces with the simulation ros control script.
 
 
 
