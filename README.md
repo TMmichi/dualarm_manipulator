@@ -99,7 +99,7 @@ As it is mentioned before, there is no significant differnece with the simulatio
 
 #### Reference
 
-[kinova-ros_source_code](https://github.com/Kinovarobotics/kinova-ros.git) from kinova robotics
+[kinova-ros_source_code](https://github.com/Kinovarobotics/kinova-ros.git) from github@kinova-robotics
 
 [V-rep_api](https://github.com/JoshSong/jaco_ros_vrep.git) from github@JoshSong
 
