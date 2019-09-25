@@ -1,6 +1,6 @@
 # dualarm_manipulator
 
-Manipulator control ROS package with moveit! for v-rep simulation / Local kinova jaco2 machine
+Manipulator controlling ROS package with moveit! for V-rep simulation / Local kinova jaco2 machine
 
 Currently tested in Ubuntu 18.04 and ROS melodic
 
@@ -11,7 +11,7 @@ Since most of the ROS dependecies are included as a source in the repository, ca
 ## 1-1.Preliminary
 
 ### V-rep
-v-rep source can be downloaded from [here](http://www.coppeliarobotics.com/ubuntuVersions.html) and should be installed within the `/opt` folder. Installed directory can be changed, but should be matched with the vrep_path argument within the launch file: `vrep_jaco_bringup/launch/bringup.launch: vrep_path`
+V-rep source can be downloaded from [here](http://www.coppeliarobotics.com/ubuntuVersions.html) and should be installed within the `/opt` folder. Installed directory can be changed, but should be matched with the vrep_path argument within the launch file: `vrep_jaco_bringup/launch/bringup.launch: vrep_path`
 ```
 ```
 
@@ -19,7 +19,7 @@ v-rep source can be downloaded from [here](http://www.coppeliarobotics.com/ubunt
 
 Manipulation of a real machine and one in the simulation are much alike from each other. 
 
-## 2-1. Manipulator control within the v-rep simulation
+## 2-1. Manipulator control within the V-rep simulation
 
 ### 2-1-1. Simulation environment bringup with ROS C++ Api
 
@@ -34,7 +34,7 @@ Bringup launch file DOES NOT include manipulator URDF xacro.
 
 
 #### Note:
-- Prior to connect ROS-api of v-rep with the simulation environment itself, v-rep should be launched with the designated port number. Default port number has been set to `19997` in `action_client/src/VrepInterface.cpp` line number `38` with clientID_.
+- Prior to connect ROS-api of V-rep with the simulation environment itself, V-rep should be launched with the designated port number. Default port number has been set to `19997` in `action_client/src/VrepInterface.cpp` line number `38` with clientID_.
 
 - If the api client node is running on a separate machine other than the machine with V-rep simulation, IP address should also be clarified, other than the default localhost (`127.0.0.1`)
 
