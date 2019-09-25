@@ -72,7 +72,11 @@ There is no significant differneces with the simulation ros control script.
 ### Reference
 
 [moveit_source_code](https://github.com/ros-planning/moveit.git)
+
 [kinova-ros_source_code](https://github.com/Kinovarobotics/kinova-ros.git)
+
 [V-rep_api](https://github.com/JoshSong/jaco_ros_vrep.git)
+
 [controller_script](http://docs.ros.org/kinetic/api/moveit_tutorials/html/index.html)
+
 
