@@ -32,6 +32,9 @@ sudo apt-get install libqt5x11extras5=5.5.1-3build1
 
 Build your repo with `catkin_make` command in the directory where your `src` folder is located.
 ```
+cd catkin_ws/src
+git clone https://github.com/TMmichi/dualarm_manipulator.git
+cd ..
 catkin_make
 ```
 
