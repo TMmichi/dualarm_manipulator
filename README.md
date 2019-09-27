@@ -6,7 +6,7 @@ Currently tested in Ubuntu 18.04 and ROS melodic
 
 ## 1. Installation
 
-Installation in Ubuntu 18.04 with ROS melodic is preffered (since other version of ROS or ubuntu distro were not tested)
+Installation in Ubuntu 18.04 with ROS melodic is recommended (since other version of ROS or ubuntu distro were not tested)
 
 ### 1-1. Preliminary
 
@@ -31,12 +31,15 @@ sudo apt-get install libqt5x11extras5=5.5.1-3build1
 ### 1-3. Build & Source repo
 
 Build your repo with `catkin_make` command in the directory where your `src` folder is located.
-```
+```bash
+cd catkin_ws/src
+git clone https://github.com/TMmichi/dualarm_manipulator.git
+cd ..
 catkin_make
 ```
 
 After building your repo, source `setup.bash` file in your project devel folder to the `.bashrc`.
-```
+```bash
 echo "source ~YOUR_PROJECT_FOLDER/devl/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
@@ -76,7 +79,7 @@ roslaunch jaco_controller jaco_controller.launch
 
 It also launches the ROS node with C++ script `jaco_controller.cpp` in folder `jaco_controller/src` which initializes the actionlib client side which communicates with the v-rep api server side.
 
-By using Moveit! package, user does not have to consider action/state synchronization between the machine in the simulation and the controller node. Providing target gripper pose to the `plan()` method and calling `move()` within the `move_group` instance will publish rostopic with name and type in `/USER_DEFINED_NAME/joint_trajectory/goal` and `control_msgs/FollowJointTrajectoryActionGoal` respectively. Published topic from move_gropup instance in actionlib client side will then be transfered to the server side and wait till all of the goal joint states in `joint_trajectory/goal` to be finished in simulation.
+By using Moveit! package, user does not have to consider action/state synchronization between the machine in the simulation and the controller node. Providing target gripper pose to the `plan()` method and calling `move()` within the `move_group` instance will publish rostopic with name and type in `/USER_DEFINED_NAME/joint_trajectory/goal` and `control_msgs/FollowJointTrajectoryActionGoal` respectively. Published topic from move_gropup instance in actionlib client side will then be transfered to the server side and wait till all of the goal joint states in `joint_trajectory/goal` to be finished in the simulation.
 
 
 
