@@ -4,10 +4,13 @@ project(teleop_msg_publisher)
 ## Find catkin macros and libraries
 find_package(catkin REQUIRED COMPONENTS
   rospy
+  roscpp
   message_generation
   std_msgs
   geometry_msgs
   control_msgs
+  kinova_driver
+  kinova_msgs
 )
 
 catkin_python_setup()
@@ -24,7 +27,9 @@ generate_messages(
 )
 
 
-catkin_package(CATKIN_DEPENDS rospy message_runtime)
+catkin_package(
+   CATKIN_DEPENDS kinova_driver kinova_msgs roscpp rospy message_runtime std_msgs geometry_msgs
+  )
 
 include_directories(
 # include

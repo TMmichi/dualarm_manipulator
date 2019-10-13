@@ -1,12 +1,14 @@
 <?xml version="1.0"?>
 <launch>
 
-  <arg name="casadi_path" default="/opt/casadi-linux-py27-v3.4.5-64bit"/>
-  <arg name="use_odom" value="true"/>
+  <arg name="test" default="True"/>
+  <arg name="use_sim" default="True"/>
+  <arg if="$(arg use_sim)" name="prefix" default="jaco"/>
+  <arg unless="$(arg use_sim)" name="prefix" default="j2n6s300"/>
 
   <node pkg="teleop_msg_publisher" type="teleop_msg_publisher.py" name="teleop_msg_publisher"  output="screen">
-    <param name="casadi_path" value="$(arg casadi_path)"/>
-    <param name="use_odom" value="$(arg use_odom)"/>
+    <param name="test" value="$(arg test)"/>
+    <param name="prefix" value="$(arg prefix)"/>
   </node>
 
 </launch>

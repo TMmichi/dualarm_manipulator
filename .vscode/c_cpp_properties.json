@@ -1,0 +1,43 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/ljh/Shared_project/jaco_control/devel/include/**",
+                "/home/ljh/Project/realsense/devel/include/**",
+                "/home/ljh/Project/vrep_jaco/devel/include/**",
+                "/opt/ros/melodic/include/**",
+                "/home/ljh/Shared_project/jaco_control/src/dualarm_manipulator/action_client/include/**",
+                "/home/ljh/Project/vrep_jaco/src/moveit/moveit_planners/chomp/chomp_motion_planner/include/**",
+                "/home/ljh/Project/realsense/src/ddynamic_reconfigure/include/**",
+                "/home/ljh/Shared_project/jaco_control/src/dualarm_manipulator/kinova-ros/kinova_moveit/inverse_kinematics_plugins/ikfast/j2n6s300_ikfast/include/**",
+                "/home/ljh/Shared_project/jaco_control/src/dualarm_manipulator/kinova-ros/kinova_moveit/inverse_kinematics_plugins/ikfast/j2s6s300_ikfast/include/**",
+                "/home/ljh/Shared_project/jaco_control/src/dualarm_manipulator/kinova-ros/kinova_moveit/inverse_kinematics_plugins/ikfast/j2s7s300_ikfast/include/**",
+                "/home/ljh/Shared_project/jaco_control/src/dualarm_manipulator/kinova-ros/kinova_moveit/kinova_arm_moveit_demo/include/**",
+                "/home/ljh/Shared_project/jaco_control/src/dualarm_manipulator/kinova-ros/kinova_driver/include/**",
+                "/home/ljh/Shared_project/jaco_control/src/dualarm_manipulator/kinova-ros/kinova_moveit/inverse_kinematics_plugins/ikfast/m1n6s300_ikfast/include/**",
+                "/home/ljh/Project/vrep_jaco/src/moveit/moveit_planners/chomp/chomp_interface/include/**",
+                "/home/ljh/Project/vrep_jaco/src/moveit/moveit_ros/benchmarks/include/**",
+                "/home/ljh/Project/vrep_jaco/src/moveit/moveit_plugins/moveit_ros_control_interface/include/**",
+                "/home/ljh/Project/vrep_jaco/src/moveit/moveit_ros/move_group/include/**",
+                "/home/ljh/Project/vrep_jaco/src/moveit/moveit_ros/occupancy_map_monitor/include/**",
+                "/home/ljh/Project/vrep_jaco/src/moveit/moveit_ros/robot_interaction/include/**",
+                "/home/ljh/Project/vrep_jaco/src/moveit/moveit_setup_assistant/include/**",
+                "/home/ljh/Project/vrep_jaco/src/moveit/moveit_plugins/moveit_simple_controller_manager/include/**",
+                "/home/ljh/Project/realsense/src/realsense-ros/realsense2_camera/include/**",
+                "/home/ljh/Project/vrep_jaco/src/moveit/moveit_planners/sbpl/core/sbpl_interface/include/**",
+                "/home/ljh/Shared_project/jaco_control/src/dualarm_manipulator/vrep_api/include/**",
+                "/usr/include/**"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

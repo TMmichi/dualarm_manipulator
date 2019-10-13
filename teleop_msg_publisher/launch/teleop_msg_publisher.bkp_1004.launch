@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="test" default="True"/>
+  <arg name="use_sim" default="True"/>
+  <arg if="$(arg use_sim)" name="prefix" default="jaco"/>
+  <arg unless="$(arg use_sim)" name="prefix" default="j2n6s300"/>
+
+  <rosparam file="$(find kinova_control)/config/j2n6s300_control.yaml" command="load"/>
+
+    <!--<node name="j2n6s300_joints_controller" pkg="controller_manager" type="spawner" respawn="false"
+        output="screen" ns="j2n6s300"
+        args="joint_1_position_controller joint_2_position_controller  
+               joint_3_position_controller joint_4_position_controller
+               joint_5_position_controller joint_6_position_controller 
+               finger_2_position_controller finger_1_position_controller 
+               finger_3_position_controller finger_tip_1_position_controller
+               finger_tip_2_position_controller finger_tip_3_position_controller
+               joint_state_controller"> 
+    </node>-->
+
+    <node name="j2n6s300_joints_controller" pkg="controller_manager" type="spawner" 
+      output="screen" ns="j2n6s300"
+      args="effort_joint_trajectory_controller
+        effort_finger_trajectory_controller    
+        finger_tip_1_position_controller
+        finger_tip_2_position_controller 
+        finger_tip_3_position_controller
+        joint_state_controller"/>
+  
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+        respawn="false" output="screen">    
+    <remap from="/joint_states" to="/j2n6s300/joint_states"/>    
+  </node>
+
+  <node pkg="teleop_msg_publisher" type="teleop_msg_publisher.py" name="teleop_msg_publisher"  output="screen">
+    <param name="test" value="$(arg test)"/>
+    <param name="prefix" value="$(arg prefix)"/>
+  </node>
+
+</launch>
