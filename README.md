@@ -20,6 +20,7 @@ sudo apt-get install ros-<distro>-moveit-core
 sudo apt-get install ros-<distro>-moveit-ros
 sudo apt-get install ros-<distro>-rviz-visual-tools
 sudo apt-get install ros-<distro>-moveit-visual-tools
+sudo apt-get install ros-<distro>-ompl
 ```
 ##### Note
 - If your libqt5x11extras5 version is greater than 5.5.1-3build1, you should downgrade your libqt with command
