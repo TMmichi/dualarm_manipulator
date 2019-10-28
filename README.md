@@ -21,6 +21,7 @@ sudo apt-get install ros-<distro>-moveit-ros
 sudo apt-get install ros-<distro>-rviz-visual-tools
 sudo apt-get install ros-<distro>-moveit-visual-tools
 sudo apt-get install ros-<distro>-ompl
+sudo apt-get install ros-<distro>-moveit-planners-ompl
 sudo apt-get install ros-<distro>-trac-ik-kinematics-plugin
 ```
 ##### Note
