@@ -23,6 +23,7 @@ sudo apt-get install ros-<distro>-moveit-visual-tools
 sudo apt-get install ros-<distro>-ompl
 sudo apt-get install ros-<distro>-moveit-planners-ompl
 sudo apt-get install ros-<distro>-trac-ik-kinematics-plugin
+sudo apt-get install ros-<distro>-moveit-resources
 ```
 ##### Note
 - If your libqt5x11extras5 version is greater than 5.5.1-3build1, you should downgrade your libqt with command
